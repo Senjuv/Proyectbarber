@@ -1,0 +1,29 @@
+.section-c{ 
+    height: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    padding-top: 5rem;
+}
+
+.container-c{
+    box-sizing: border-box;
+
+    display: flex;
+    flex-wrap: wrap;
+    font-size: .8rem;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.container-cp{
+    border-radius: .7rem;
+    background-color: rgb(245, 248, 248);
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border: 1px solid;
+    box-sizing: border-box;
+    width: 9rem;
+    padding:.2rem;
+}
+

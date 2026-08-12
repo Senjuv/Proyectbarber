@@ -1,0 +1,48 @@
+.section-pp{
+    box-sizing: border-box;
+    width: 20.5rem;
+    height: 20rem;
+    justify-content: center;
+    background-color: rgb(167, 157, 157);
+    position: fixed;
+    padding: 1rem;
+}
+
+.container-pp{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.container-cp:hover{
+    background-color: rgb(149, 151, 151);
+}
+
+.container-cp1{
+    border-radius: .7rem;
+    background-color: rgb(245, 248, 248);
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border: 1px solid;
+    box-sizing: border-box;
+    width: 8.5rem;
+    padding:.2rem;
+}
+
+.container-cp1:hover{
+    background-color: rgb(149, 151, 151);
+}
+
+.container-ca{
+    display: flex;
+    justify-content: flex-end;
+}
+.cancel{
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 1rem;
+}
+.cancel:hover{
+    color: tomato;
+}

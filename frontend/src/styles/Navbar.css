@@ -1,0 +1,58 @@
+
+.App-header {
+    scroll-behavior: inherit;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em;
+    display: flex;
+    z-index: 100;
+    background-color: #E6F2DD;
+}
+
+.Title-nav {
+    font-family: Old English Text MT;
+    font-size: clamp(.6rem, 7vw, 2rem);
+    text-shadow: 1px 1px 1px rgb(117, 101, 101);
+    margin-top: .4rem;
+    margin-right: 1rem;
+    color: black;
+}
+
+.items {
+    font-size: clamp(.8rem, 3vw, 1.2rem);
+    display: inline-flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.link-a {
+    color: white;
+    text-decoration: none;
+}
+
+.link-a:hover {
+    color: blue;
+}
+
+.link-b {
+    color: black;
+    text-decoration: none;
+}
+
+.link-b:hover {
+    color: blue;
+}
+
+.list-nav {
+    text-align: right;
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
