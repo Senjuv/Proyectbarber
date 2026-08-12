@@ -1,10 +1,10 @@
 import { MdOutlineCancel } from "react-icons/md";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 
 function Selectionc() {
     const [isOpen, setIsOpen] = useState(false);
-    const popupRef = useRef(null);
+
 
     return (
         <div className="section-c">
