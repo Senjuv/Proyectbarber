@@ -1,5 +1,4 @@
 import Home from './pages/Home';
-import Citas from './pages/CitasD';
 import { Routes, Route } from 'react-router-dom';
 import CitasD from './pages/CitasD';
 
