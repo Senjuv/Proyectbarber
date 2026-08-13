@@ -1,11 +1,13 @@
 .section-pp{
     box-sizing: border-box;
     width: 20.5rem;
-    height: 20rem;
+    height: 30rem;
     justify-content: center;
-    background-color: rgb(167, 157, 157);
+    background-color: rgb(243, 242, 242);
     position: fixed;
     padding: 1rem;
+    border-radius: 1rem;
+    overflow-y: auto;
 }
 
 .container-pp{

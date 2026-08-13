@@ -15,7 +15,7 @@
 }
 
 .Title-nav {
-    font-family: Old English Text MT;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: clamp(.6rem, 7vw, 2rem);
     text-shadow: 1px 1px 1px rgb(117, 101, 101);
     margin-top: .4rem;

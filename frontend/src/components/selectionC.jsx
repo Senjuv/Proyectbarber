@@ -1,70 +1,68 @@
-import { MdOutlineCancel } from "react-icons/md";
-import { useState } from "react";
 
+import Modal1 from "../components/Modal1";
+import Horario from "../components/Horario.jsx";
+import { useReserva } from "../utils/declarations.jsx";
 
 function Selectionc() {
-    const [isOpen, setIsOpen] = useState(false);
+    const { isOpen, setIsOpen, setDatosCita, datosCita } = useReserva();
 
+    const dataC = (corte) => {
+        setDatosCita({ ...datosCita, corte: corte });
+    };
+    const dataD = (hora) => {
+        setDatosCita({ ...datosCita, hora: hora });
+    };
 
     return (
         <div className="section-c">
             <h3>Catalogo de servicios</h3>
             <div className="container-c">
-                <div className="container-cp">
+                <div className="container-cp" id="CorteH" onClick={() => {dataC("CorteH"); setIsOpen('dia')}}>
                     <h3>Corte de cabello (hombre)</h3>
                     <p>$130</p>
                 </div>
-                <div className="container-cp">
+                <div className="container-cp" id="CorteM" onClick={() => {dataC("CorteM"); setIsOpen('dia')}}>
                     <h3>Corte de cabello (Mujer)</h3>
                     <p>$130</p>
                 </div>
-                <div className="container-cp">
+                <div className="container-cp" id="Barba" onClick={() => {dataC("Barba"); setIsOpen('dia')}}>
                     <h3>Barba (Incluye spa)</h3>
                     <p>$100</p>
                 </div>
-                <div className="container-cp">
+                <div className="container-cp" id="Ceja" onClick={() => {dataC("Ceja"); setIsOpen('dia')}}>
                     <h3>Ceja</h3>
                     <p>$50</p>
                 </div>
-                <div className="container-cp">
+                <div className="container-cp" id="GrecaS" onClick={() => {dataC("GrecaS"); setIsOpen('dia')}}>
                     <h3>Greca sencilla</h3>
                     <p>$30</p>
                 </div>
-                <div className="container-cp">
+                <div className="container-cp" id="GrecaE" onClick={() => {dataC("GrecaE"); setIsOpen('dia')}}>
                     <h3>Greca elaborada</h3>
                     <p>$50</p>
                 </div>
-                <div className="container-cp" onClick={() => setIsOpen(true)}>
+                <div className="container-cp" onClick={() => setIsOpen('corte')}>
                     <h3>Combos</h3>
                     <p></p>
                 </div>
 
-                {isOpen && (
-                    <div className="section-pp">
-                        <div className="container-ca">
-                            <MdOutlineCancel onClick={() => setIsOpen(false)} className="cancel" />
-                        </div>
-                        <div className="container-pp">
-                            <div className="container-cp1">
-                                <h3>Corte + Barba</h3>
-                                <p>$200</p>
-                            </div>
-                            <div className="container-cp1">
-                                <h3>Corte + Lavado</h3>
-                                <p>$145</p>
-                            </div>
-                            <div className="container-cp1">
-                                <h3>Corte + Barba + Lavado</h3>
-                                <p>$220</p>
-                            </div>
-                            <div className="container-cp1">
-                                <h3>Corte + Ceja</h3>
-                                <p>$150</p>
-                            </div>
-                        </div>
-                    </div>
+                {isOpen === 'corte' && (
+                    <Modal1
+                        isOpen={isOpen}
+                        setIsOpen={setIsOpen}
+                        dataC={dataC}
+                    />
                 )}
-                <p>Cada uno de estos servicios tiene un tiempo promedio de duracion, haciendo exepcion en los combos</p>
+
+                {isOpen === 'dia' && (
+                    <Horario
+                        isOpen={isOpen}
+                        setIsOpen={setIsOpen}
+                        dataD={dataD}
+                    />
+                )}
+
+                <p>Cada uno de estos servicios tiene un tiempo promedio de 50 minutos de duracion, haciendo exepcion en los combos</p>
             </div>
 
         </div>

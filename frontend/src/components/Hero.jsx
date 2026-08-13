@@ -1,3 +1,4 @@
+import { AiFillWechat } from "react-icons/ai";
 
 function Hero(){
     return(
@@ -5,6 +6,7 @@ function Hero(){
             <div className="div-h" id="inicio">
                 <div className="figura-h">
                     <div className="figura1-h">
+                        <AiFillWechat style={{ position: 'relative', zIndex:'10' }}/>
                     </div>
                 </div>
                 <h1 className="title-h">Tu marca</h1>

@@ -1,0 +1,18 @@
+.gridCalendar{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1fr);
+    justify-content: center;
+    justify-items: center;
+    gap: .2rem;
+    
+}
+
+.DataC{
+    font-size: 1rem;
+    border: 1px solid;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    
+}
