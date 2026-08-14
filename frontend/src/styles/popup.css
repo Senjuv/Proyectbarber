@@ -1,16 +1,19 @@
 .section-pp{
     box-sizing: border-box;
-    width: 20.5rem;
+    width: clamp(20rem, 100vw, 34rem);
     height: 30rem;
     justify-content: center;
     background-color: rgb(243, 242, 242);
     position: fixed;
-    padding: 1rem;
     border-radius: 1rem;
     overflow-y: auto;
+    margin-left: -1rem;
+    padding: 1rem;
+    box-shadow: 1px 1px 7px 3px rgb(141, 138, 138);
 }
 
 .container-pp{
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;

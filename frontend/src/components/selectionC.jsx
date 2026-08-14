@@ -17,27 +17,27 @@ function Selectionc() {
         <div className="section-c">
             <h3>Catalogo de servicios</h3>
             <div className="container-c">
-                <div className="container-cp" id="CorteH" onClick={() => {dataC("CorteH"); setIsOpen('dia')}}>
+                <div className="container-cp" id="CorteH" onClick={() => { dataC("CorteH"); setIsOpen('dia') }}>
                     <h3>Corte de cabello (hombre)</h3>
                     <p>$130</p>
                 </div>
-                <div className="container-cp" id="CorteM" onClick={() => {dataC("CorteM"); setIsOpen('dia')}}>
+                <div className="container-cp" id="CorteM" onClick={() => { dataC("CorteM"); setIsOpen('dia') }}>
                     <h3>Corte de cabello (Mujer)</h3>
                     <p>$130</p>
                 </div>
-                <div className="container-cp" id="Barba" onClick={() => {dataC("Barba"); setIsOpen('dia')}}>
+                <div className="container-cp" id="Barba" onClick={() => { dataC("Barba"); setIsOpen('dia') }}>
                     <h3>Barba (Incluye spa)</h3>
                     <p>$100</p>
                 </div>
-                <div className="container-cp" id="Ceja" onClick={() => {dataC("Ceja"); setIsOpen('dia')}}>
+                <div className="container-cp" id="Ceja" onClick={() => { dataC("Ceja"); setIsOpen('dia') }}>
                     <h3>Ceja</h3>
                     <p>$50</p>
                 </div>
-                <div className="container-cp" id="GrecaS" onClick={() => {dataC("GrecaS"); setIsOpen('dia')}}>
+                <div className="container-cp" id="GrecaS" onClick={() => { dataC("GrecaS"); setIsOpen('dia') }}>
                     <h3>Greca sencilla</h3>
                     <p>$30</p>
                 </div>
-                <div className="container-cp" id="GrecaE" onClick={() => {dataC("GrecaE"); setIsOpen('dia')}}>
+                <div className="container-cp" id="GrecaE" onClick={() => { dataC("GrecaE"); setIsOpen('dia') }}>
                     <h3>Greca elaborada</h3>
                     <p>$50</p>
                 </div>
@@ -61,11 +61,10 @@ function Selectionc() {
                         dataD={dataD}
                     />
                 )}
-
                 <p>Cada uno de estos servicios tiene un tiempo promedio de 50 minutos de duracion, haciendo exepcion en los combos</p>
             </div>
-
         </div>
+
     )
 }
 

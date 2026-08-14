@@ -7,7 +7,6 @@
 
 .container-c{
     box-sizing: border-box;
-
     display: flex;
     flex-wrap: wrap;
     font-size: .8rem;
@@ -23,7 +22,7 @@
     justify-content: center;
     border: 1px solid;
     box-sizing: border-box;
-    width: 9rem;
+    width: clamp(8rem, 41vw, 10rem);
     padding:.2rem;
 }
 
