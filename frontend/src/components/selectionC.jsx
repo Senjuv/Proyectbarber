@@ -1,7 +1,9 @@
 
 import Modal1 from "../components/Modal1";
 import Horario from "../components/Horario.jsx";
+import Name from "../components/Form.jsx";
 import { useReserva } from "../utils/declarations.jsx";
+import { supabase } from "../utils/supabase.js";
 
 function Selectionc() {
     const { isOpen, setIsOpen, setDatosCita, datosCita } = useReserva();
@@ -56,6 +58,14 @@ function Selectionc() {
 
                 {isOpen === 'dia' && (
                     <Horario
+                        isOpen={isOpen}
+                        setIsOpen={setIsOpen}
+                        dataD={dataD}
+                    />
+                )}
+
+                {isOpen === 'name' && (
+                    <Name
                         isOpen={isOpen}
                         setIsOpen={setIsOpen}
                         dataD={dataD}

@@ -1,7 +1,7 @@
 .section-pp{
     box-sizing: border-box;
     width: clamp(20rem, 100vw, 34rem);
-    height: 30rem;
+    height: 33rem;
     justify-content: center;
     background-color: rgb(243, 242, 242);
     position: fixed;

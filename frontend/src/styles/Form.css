@@ -1,0 +1,28 @@
+.form-d{
+font-size: .8rem;
+width: 15rem;
+}
+
+.input{
+    width: 13rem;
+    height: 2rem;
+    margin-top: -1.5rem;
+    border-radius: 1rem;
+}
+
+.button-e{
+    background-color: rgb(120, 209, 140);
+    display: flex;
+    justify-content: center;
+    border: 1px solid;
+    margin-top: 2rem;
+    width: 4rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-items: center;
+}
+
+.button-e:hover{
+    background-color: rgb(10, 58, 9);
+}

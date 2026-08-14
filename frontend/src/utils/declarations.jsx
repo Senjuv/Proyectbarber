@@ -6,6 +6,7 @@ export const useReserva = () => {
 
     const [datosCita, setDatosCita] = useState({
         nombre: "",
+        numero: "",
         corte: "",
         hora: ""
     });
