@@ -1,28 +1,28 @@
-.form-d{
-font-size: .8rem;
-width: 15rem;
+.form-d {
+    font-size: .8rem;
+    width: 15rem;
 }
 
-.input{
+.input {
     width: 13rem;
     height: 2rem;
     margin-top: -1.5rem;
     border-radius: 1rem;
 }
 
-.button-e{
+.button-e {
     background-color: rgb(120, 209, 140);
     display: flex;
     justify-content: center;
     border: 1px solid;
     margin-top: 2rem;
-    width: clamp(3rem, 42vw, 10rem );
+    width: clamp(3rem, 42vw, 10rem);
     height: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
     align-items: center;
 }
 
-.button-e:hover{
+.button-e:hover {
     background-color: rgb(10, 58, 9);
 }
