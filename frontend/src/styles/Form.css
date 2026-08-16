@@ -16,7 +16,7 @@ width: 15rem;
     justify-content: center;
     border: 1px solid;
     margin-top: 2rem;
-    width: 4rem;
+    width: clamp(3rem, 42vw, 10rem );
     height: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;

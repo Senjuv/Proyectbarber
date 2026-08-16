@@ -2,6 +2,7 @@
 import Modal1 from "../components/Modal1";
 import Horario from "../components/Horario.jsx";
 import Name from "../components/Form.jsx";
+import Presentacion from "../components/Presentacion.jsx";
 import { useReserva } from "../utils/declarations.jsx";
 //import { supabase } from "../utils/supabase.js";
 
@@ -15,6 +16,11 @@ function Selectionc() {
         setDatosCita({ ...datosCita, hora: hora });
     };
 
+    const dataUS = (nombre, numero) => {
+        setDatosCita({ ...datosCita, nombre: nombre, numero: numero })
+    }
+
+    console.log(isOpen);
     return (
         <div className="section-c">
             <h3>Catalogo de servicios</h3>
@@ -63,14 +69,22 @@ function Selectionc() {
                         dataD={dataD}
                     />
                 )}
-
+                {isOpen === 'present' && (
+                    <Presentacion
+                        isOpen={isOpen}
+                        setIsOpen={setIsOpen}
+                        datosCita={datosCita}
+                    />
+                )}
                 {isOpen === 'name' && (
                     <Name
                         isOpen={isOpen}
                         setIsOpen={setIsOpen}
-                        dataD={dataD}
+                        dataUS={dataUS}
                     />
                 )}
+
+
                 <p>Cada uno de estos servicios tiene un tiempo promedio de 50 minutos de duracion, haciendo exepcion en los combos</p>
             </div>
         </div>
