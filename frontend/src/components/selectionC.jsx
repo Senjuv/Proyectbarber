@@ -3,8 +3,9 @@ import Modal1 from "../components/Modal1";
 import Horario from "../components/Horario.jsx";
 import Name from "../components/Form.jsx";
 import Presentacion from "../components/Presentacion.jsx";
+
 import { useReserva } from "../utils/declarations.jsx";
-//import { supabase } from "../utils/supabase.js";
+import { supabase } from "../utils/supabase.js";
 
 function Selectionc() {
     const { isOpen, setIsOpen, setDatosCita, datosCita } = useReserva();

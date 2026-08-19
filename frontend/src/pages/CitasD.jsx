@@ -5,6 +5,7 @@ import '../styles/popup.css';
 import '../styles/Horario.css';
 import '../styles/Form.css';
 import '../styles/Present.css';
+import '../styles/Error.css';
 import Navbar from "../utils/Navbar";
 import Footer from "../utils/Footer";
 import Selection from "../components/selectionC";

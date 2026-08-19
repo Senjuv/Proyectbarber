@@ -1,6 +1,6 @@
 import { MdOutlineCancel } from "react-icons/md";
 import { useState } from "react";
-
+import Errorprox from "../utils/error.jsx";
 function Form({ isOpen, setIsOpen, dataUS }) {
 
     const [nombre, setNombre] = useState('');
@@ -14,12 +14,13 @@ function Form({ isOpen, setIsOpen, dataUS }) {
     };
 
     function validateData() {
-        if (nombre !== null && nombre.trim() !== '') {
+        if (nombre !== null && nombre.trim() !== '' && number !== null && number.trim() !== '') {
         dataUS(nombre, number); 
         setIsOpen('present');
         console.log(isOpen);
         }else{
-            console.log("No hay datos en el nombre")
+            <Errorprox/>
+            window.alert("Debes ingresar el nombre y el numero de telefono");
         }
     }
     return (
