@@ -19,7 +19,7 @@ function Panel() {
             console.log(data);
             setdatos(data);
         }
-    }, []);
+    }, [navigate]);
 
     async function closeC() {
         const { error } = await supabase.auth.signOut();
