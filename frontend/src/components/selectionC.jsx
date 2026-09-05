@@ -5,7 +5,6 @@ import Name from "../components/Form.jsx";
 import Presentacion from "../components/Presentacion.jsx";
 
 import { useReserva } from "../utils/declarations.jsx";
-import { useState } from "react";
 
 function Selectionc() {
 

@@ -1,5 +1,5 @@
 import { MdOutlineCancel } from "react-icons/md";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { supabase } from "../utils/supabase";
 
 function Presentacion({ isOpen, setIsOpen, datosCita, env, setEnv }) {
@@ -31,7 +31,6 @@ function Presentacion({ isOpen, setIsOpen, datosCita, env, setEnv }) {
                         horar: datosCita.id
                     }
                 ])
-                console.log(datosCita.nombre,datosCita.corte,datosCita.hora,datosCita.numero,datosCita.id)
             if (error) {
                 console.log("Ocurrio un error");
             } else {
