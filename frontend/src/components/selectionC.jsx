@@ -5,21 +5,27 @@ import Name from "../components/Form.jsx";
 import Presentacion from "../components/Presentacion.jsx";
 
 import { useReserva } from "../utils/declarations.jsx";
-import { supabase } from "../utils/supabase.js";
+import { useState } from "react";
 
 function Selectionc() {
-    const { isOpen, setIsOpen, setDatosCita, datosCita } = useReserva();
+
+    
+
+    const { isOpen, setIsOpen, setDatosCita, datosCita, env, setEnv } = useReserva();
 
     const dataC = (corte) => {
         setDatosCita({ ...datosCita, corte: corte });
     };
-    const dataD = (hora) => {
-        setDatosCita({ ...datosCita, hora: hora });
+    const dataD = (hora, id) => {
+        setDatosCita({ ...datosCita, hora: hora, id: id});
     };
 
     const dataUS = (nombre, numero) => {
         setDatosCita({ ...datosCita, nombre: nombre, numero: numero })
     }
+
+    
+    
 
     console.log(isOpen);
     return (
@@ -75,6 +81,8 @@ function Selectionc() {
                         isOpen={isOpen}
                         setIsOpen={setIsOpen}
                         datosCita={datosCita}
+                        env={env}
+                        setEnv={setEnv}
                     />
                 )}
                 {isOpen === 'name' && (

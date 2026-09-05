@@ -1,0 +1,65 @@
+.sections-c {
+    box-sizing: border-box;
+    margin-top: 10rem;
+    padding: 1rem;
+}
+
+.formContainer {
+    box-sizing: border-box;
+    padding-top: 4rem;
+    position: relative;
+    background-color: #F4F2F2;
+    padding: 1rem;
+}
+
+.Form {
+    width: 10rem;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+
+.input-t {
+    width: 10rem;
+    height: 1.5rem;
+    border-radius: 5px;
+}
+
+.tittleform {
+    font-size: 1rem;
+    vertical-align: center;
+    text-shadow: 0.5px 0.5px 0.5px rgb(36, 34, 34);
+}
+
+.contact {
+    display: block;
+}
+
+.Button-E {
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 1rem;
+    width: 4rem;
+    height: 2rem;
+    background-color: rgb(25, 56, 102);
+    color: white;
+    border-radius: .6rem;
+    border-width: .5rem;
+}
+
+.Button-E:hover {
+    background-color: rgb(1, 16, 36);
+    cursor: pointer;
+    color: rgb(105, 133, 105);
+}
+
+.h1-t {
+    font-size: 1.5em;
+}
+
+::placeholder {
+        font-size: 1rem; /* Tamaño del texto */
+        color: gray;     /* Color del texto */
+        opacity: 1;      /* Asegura que el color se vea igual en todos los navegadores */
+    }

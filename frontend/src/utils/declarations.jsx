@@ -8,14 +8,19 @@ export const useReserva = () => {
         nombre: "",
         numero: "",
         corte: "",
-        hora: ""
+        hora: "",
+        id: ""
     });
+
+    const [env, setEnv] = useState(false);
 
     return {
         isOpen,
         setIsOpen,
         datosCita,
-        setDatosCita
+        setDatosCita,
+        env,
+        setEnv
     };
 };
 
