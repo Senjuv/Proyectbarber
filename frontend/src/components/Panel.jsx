@@ -12,7 +12,7 @@ function Panel() {
         console.log("Se esta ejecutando esto");
         if (!session) {
             console.log("Esta lleganado aqui");
-            navigate('/Login'); 
+            navigate('/#inicio'); 
         } else {
             console.log("La sesion esta iniciada");
             const { data } = await supabase.rpc('obtener_usuarios');
