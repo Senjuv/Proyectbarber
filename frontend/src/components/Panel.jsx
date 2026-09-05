@@ -7,18 +7,23 @@ function Panel() {
     const navigate = useNavigate();
     const [datos, setdatos] = useState([]);
 
-    useEffect(() => async function verificarSesion() {
-        const { data: { session } } = await supabase.auth.getSession();
-        console.log("Se esta ejecutando esto");
-        if (!session) {
-            console.log("Esta lleganado aqui");
-            navigate('/#inicio'); 
-        } else {
-            console.log("La sesion esta iniciada");
-            const { data } = await supabase.rpc('obtener_usuarios');
-            console.log(data);
-            setdatos(data);
-        }
+    useEffect(() => {
+        const verificarSesion = async () => {
+            const { data: { session } } = await supabase.auth.getSession();
+            console.log("Se esta ejecutando esto");
+
+            if (!session) {
+                console.log("Esta llegando aqui");
+                navigate('/Login');
+            } else {
+                console.log("La sesion esta iniciada");
+                const { data } = await supabase.rpc('obtener_usuarios');
+                console.log(data);
+                setdatos(data);
+            }
+        };
+
+        verificarSesion();
     }, [navigate]);
 
     async function closeC() {
