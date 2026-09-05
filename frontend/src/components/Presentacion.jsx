@@ -1,44 +1,86 @@
 import { MdOutlineCancel } from "react-icons/md";
 import { useState } from "react";
 import { supabase } from "../utils/supabase";
+import Swal from 'sweetalert2';
 
 function Presentacion({ isOpen, setIsOpen, datosCita, env, setEnv }) {
     const [dataconfirm, setDataConfirm] = useState(false);
     function ValidateData() {
         if (dataconfirm !== false) {
             setEnv(true);
-            if(dataconfirm === true && env === true){
-            IngresoData()
-            console.log("si jajja");
-        }else{
-            console.log("aun no");
-        }
+            if (dataconfirm === true && env === true) {
+                IngresoData()
+                loading()
+            } else {
+                console.log("aun no");
+            }
             setIsOpen(null);
         } else {
             console.log("no jala");
         }
     }
 
-        async function IngresoData() {
-            const { error } = await supabase
-                .from('usuarios')
-                .insert([
-                    {
-                        name: datosCita.nombre,
-                        corte: datosCita.corte,
-                        hora: datosCita.hora,
-                        number: datosCita.numero,
-                        horar: datosCita.id
-                    }
-                ])
-            if (error) {
-                console.log("Ocurrio un error");
-            } else {
-                console.log("Producto guardado con exito");
-            }
+    async function IngresoData() {
+        const { error } = await supabase
+            .from('usuarios')
+            .insert([
+                {
+                    name: datosCita.nombre,
+                    corte: datosCita.corte,
+                    hora: datosCita.hora,
+                    number: datosCita.numero,
+                    horar: datosCita.id
+                }
+            ])
+        if (error) {
+            error()
+        } else {
+            acept()
         }
-        
-        
+    }
+    function error() {
+        return (
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Ocurrio un error intentando registrar el usuario!"
+            })
+        )
+    }
+    function acept() {
+        return (
+            Swal.fire({
+                title: "Cita reservada con exito!",
+                icon: "success",
+                draggable: true
+            })
+        )
+    }
+    function loading() {
+            let timerInterval;
+            return (
+            Swal.fire({
+                title: "Cargando...",
+                html: "Buscando horarios disponibles <b></b>",
+                timer: 1000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading();
+                    const timer = Swal.getPopup().querySelector("b");
+                    timerInterval = setInterval(() => {
+                        timer.textContent = `${Swal.getTimerLeft()}`;
+                    }, 100);
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) console.log("I was closed by the timer");
+            }
+            ))
+        }
+
 
     return (
         <div className="section-pp">
@@ -64,7 +106,7 @@ function Presentacion({ isOpen, setIsOpen, datosCita, env, setEnv }) {
                     <h3 className="datos-p">{datosCita.hora}</h3>
                 </div>
                 <div className="contenedor-data">
-                    <input type="checkbox" id="confirmacion" onClick={() => {setDataConfirm(true); setEnv(true)}} />
+                    <input type="checkbox" id="confirmacion" onClick={() => { setDataConfirm(true); setEnv(true) }} />
                     <p className="Accept_btn">Acepto los datos ingresados</p>
                 </div>
                 <div className="button-e" onClick={ValidateData} >

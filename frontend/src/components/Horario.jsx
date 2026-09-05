@@ -2,13 +2,13 @@
 import { MdOutlineCancel } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { supabase } from "../utils/supabase";
+import Swal from "sweetalert2";
 
-
-
-function Horario({ isOpen, setIsOpen, dataD}) {
+function Horario({ isOpen, setIsOpen, dataD }) {
 
     const [horas, setHora] = useState([]);
     useEffect(() => {
+        loading()
         async function obtenerHoras() {
             const { data, error } = await supabase.rpc('obtener_horas_disponibles');
 
@@ -26,6 +26,31 @@ function Horario({ isOpen, setIsOpen, dataD}) {
 
         obtenerHoras();
     }, []);
+
+    function loading() {
+        let timerInterval;
+        return (
+        Swal.fire({
+            title: "Cargando...",
+            html: "Buscando horarios disponibles <b></b>",
+            timer: 1000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading();
+                const timer = Swal.getPopup().querySelector("b");
+                timerInterval = setInterval(() => {
+                    timer.textContent = `${Swal.getTimerLeft()}`;
+                }, 100);
+            },
+            willClose: () => {
+                clearInterval(timerInterval);
+            }
+        }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) console.log("I was closed by the timer");
+        }
+        ))
+    }
 
     return (
         <div className="section-pp">
@@ -46,16 +71,6 @@ function Horario({ isOpen, setIsOpen, dataD}) {
                         <h5>{hora.hora}</h5>
                     </div>
                 ))}
-                {/* <div className="DataC" onClick={() => {dataD('11:00'); setIsOpen('name')}}><h5>11:00 AM</h5></div>
-                <div className="DataC" onClick={() => {dataD('11:50'); setIsOpen('name')}}><h5>11:50 AM</h5></div>
-                <div className="DataC" onClick={() => {dataD('12:40'); setIsOpen('name')}}><h5>12:40 PM</h5></div>
-                <div className="DataC" onClick={() => {dataD('13:30'); setIsOpen('name')}}><h5>13:30 PM</h5></div>
-                <div className="DataC" onClick={() => {dataD('14:20'); setIsOpen('name')}}><h5>14:20 PM</h5></div>
-                <div className="DataC" onClick={() => {dataD('15:10'); setIsOpen('name')}}><h5>15:10 PM</h5></div>
-                <div className="DataC" onClick={() => {dataD('16:00'); setIsOpen('name')}}><h5>16:00 PM</h5></div>
-                <div className="DataC" onClick={() => {dataD('16:50'); setIsOpen('name')}}><h5>16:50 PM</h5></div>
-                <div className="DataC" onClick={() => {dataD('17:40'); setIsOpen('name')}}><h5>17:40 PM</h5></div>
-                <div className="DataC" onClick={() => {dataD('18:30'); setIsOpen('name')}}><h5>18:30 PM</h5></div> */}
             </div>
         </div>
     )

@@ -24,7 +24,7 @@ function Login() {
 
         if (error) {
             console.error("Error al iniciar sesión:", error.message);
-            // Mostrar mensaje: "Credenciales incorrectas"
+            
         } else {
             console.log("Sesión iniciada con éxito:", data.user);
             navigate('../Panel', { replace: true });

@@ -2,6 +2,7 @@ import '../styles/Navbar.css';
 import '../styles/Footer.css';
 import '../styles/Hero.css';
 import '../styles/Mid.css';
+import '../styles/Panel.css';
 import Navbar from "../utils/Navbar";
 import Hero from "../components/Hero";
 import Mid from "../components/Mid";
