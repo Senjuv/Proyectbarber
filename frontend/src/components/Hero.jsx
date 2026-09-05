@@ -10,7 +10,7 @@ function Hero(){
                     </div>
                 </div>
                 <h1 className="title-h">Yazz Cutz</h1>
-                <p className="p-h">Presiona reservar cita para seleccionar tu servicio</p>
+                <p className="p-h">Cortes y diseño de cabello</p>
             </div>
         </div>
     )

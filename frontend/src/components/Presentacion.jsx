@@ -62,8 +62,8 @@ function Presentacion({ isOpen, setIsOpen, datosCita, env, setEnv }) {
             return (
             Swal.fire({
                 title: "Cargando...",
-                html: "Buscando horarios disponibles <b></b>",
-                timer: 1000,
+                html: "Se estan guardando los datos <b></b>",
+                timer: 800,
                 timerProgressBar: true,
                 didOpen: () => {
                     Swal.showLoading();
