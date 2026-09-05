@@ -34,12 +34,12 @@ function Presentacion({ isOpen, setIsOpen, datosCita, env, setEnv }) {
             ])
         if (error) {
             console.error("Error al ingresar los datos:", error.message);
-            error()
+            showError()
         } else {
             acept()
         }
     }
-    function error() {
+    function showError() {
         return (
             Swal.fire({
                 icon: "error",
