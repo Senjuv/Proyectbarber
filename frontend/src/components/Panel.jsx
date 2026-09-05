@@ -1,8 +1,10 @@
 import { supabase } from "../utils/supabase";
 import { useEffect, useState } from "react";
 import { MdOutlineCancel } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 function Panel() {
+    const navigate = useNavigate();
     const [datos, setdatos] = useState([]);
 
     useEffect(() => async function verificarSesion() {
@@ -10,7 +12,7 @@ function Panel() {
         console.log("Se esta ejecutando esto");
         if (!session) {
             console.log("Esta lleganado aqui");
-            window.location.href = "/Login";
+            navigate('/Login'); 
         } else {
             console.log("La sesion esta iniciada");
             const { data } = await supabase.rpc('obtener_usuarios');
