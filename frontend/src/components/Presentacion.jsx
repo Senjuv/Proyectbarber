@@ -20,7 +20,7 @@ function Presentacion({ isOpen, setIsOpen, datosCita, env, setEnv }) {
     }
 
         async function IngresoData() {
-            const { data, error } = await supabase
+            const { error } = await supabase
                 .from('usuarios')
                 .insert([
                     {
