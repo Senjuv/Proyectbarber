@@ -13,7 +13,7 @@ function Panel() {
             window.location.href = "/Login";
         } else {
             console.log("La sesion esta iniciada");
-            const { data, error } = await supabase.rpc('obtener_usuarios');
+            const { data } = await supabase.rpc('obtener_usuarios');
             console.log(data);
             setdatos(data);
         }

@@ -33,6 +33,7 @@ function Presentacion({ isOpen, setIsOpen, datosCita, env, setEnv }) {
                 }
             ])
         if (error) {
+            console.error("Error al ingresar los datos:", error.message);
             error()
         } else {
             acept()
