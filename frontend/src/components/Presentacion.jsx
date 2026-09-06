@@ -13,8 +13,6 @@ function Presentacion({ isOpen, setIsOpen, datosCita, env, setEnv }) {
                 loading()
             }
             setIsOpen(null);
-        } else {
-            AceptarT()
         }
     }
 
@@ -37,11 +35,7 @@ function Presentacion({ isOpen, setIsOpen, datosCita, env, setEnv }) {
             acept()
         }
     }
-    function AceptarT(){
-        return(
-            Swal.fire("SweetAlert2 is working!")
-        )
-    }
+
     function showError() {
         return (
             Swal.fire({
@@ -61,8 +55,8 @@ function Presentacion({ isOpen, setIsOpen, datosCita, env, setEnv }) {
         )
     }
     function loading() {
-            let timerInterval;
-            return (
+        let timerInterval;
+        return (
             Swal.fire({
                 title: "Cargando...",
                 html: "Se estan guardando los datos <b></b>",
@@ -83,7 +77,7 @@ function Presentacion({ isOpen, setIsOpen, datosCita, env, setEnv }) {
                 if (result.dismiss === Swal.DismissReason.timer) console.log("I was closed by the timer");
             }
             ))
-        }
+    }
 
 
     return (
