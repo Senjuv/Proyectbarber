@@ -11,12 +11,10 @@ function Presentacion({ isOpen, setIsOpen, datosCita, env, setEnv }) {
             if (dataconfirm === true && env === true) {
                 IngresoData()
                 loading()
-            } else {
-                console.log("aun no");
             }
             setIsOpen(null);
         } else {
-            console.log("no jala");
+            AceptarT()
         }
     }
 
@@ -38,6 +36,11 @@ function Presentacion({ isOpen, setIsOpen, datosCita, env, setEnv }) {
         } else {
             acept()
         }
+    }
+    function AceptarT(){
+        return(
+            Swal.fire("SweetAlert2 is working!")
+        )
     }
     function showError() {
         return (
