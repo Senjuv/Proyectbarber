@@ -1,28 +1,98 @@
-.section-c{ 
-    height: 100%;
+.section-c {
     box-sizing: border-box;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
     padding: 1rem;
-    padding-top: 5rem;
+    padding-top: 4.5rem;
 }
 
-.container-c{
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+/* Grilla fluida de 2 columnas exactas y equilibradas en móvil */
+.container-c {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.65rem;
+    width: 100%;
+}
+
+/* Tarjeta compacta */
+.container-cp {
     box-sizing: border-box;
     display: flex;
-    flex-wrap: wrap;
-    font-size: .8rem;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 1rem;
+    align-items: flex-start;
+
+    height: 5.2rem;
+    /* Altura contenida y elegante */
+    padding: 0.75rem;
+
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid #e2e8f0;
+    border-radius: 0.9rem;
+
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
 }
 
-.container-cp{
-    border-radius: .7rem;
-    background-color: rgb(245, 248, 248);
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    border: 1px solid;
-    box-sizing: border-box;
-    width: clamp(8rem, 41vw, 10rem);
-    padding:.2rem;
+.container-cp:hover {
+    background-color: #ffffff;
+    border-color: #cbd5e1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
 }
 
+.container-cp:active {
+    transform: scale(0.97);
+    background-color: #f1f5f9;
+}
+
+/* Nombre del servicio */
+.service-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.2;
+}
+
+/* Precio */
+.service-price {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #10b981;
+    /* Verde esmeralda */
+}
+
+/* Estilo especial para la tarjeta de Combos */
+.combo-card {
+    background-color: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+.service-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #2563eb;
+    background-color: #dbeafe;
+    padding: 0.15rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+/* Texto informativo inferior */
+.service-note {
+    margin-top: 1.25rem;
+    font-size: 0.8rem;
+    color: #64748b;
+    line-height: 1.4;
+    text-align: center;
+}
