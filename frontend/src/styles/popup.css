@@ -1,29 +1,78 @@
-.section-pp{
+.section-pp {
     box-sizing: border-box;
-    width: clamp(20rem, 100vw, 34rem);
-    height: 31rem;
-    justify-content: center;
-    background-color: rgb(243, 242, 242);
+
+    /* 1. Fijado al borde inferior */
     position: fixed;
-    border-radius: 2rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+
+    /* 2. Ancho completo en móviles, centrado en pantallas grandes */
+    width: 100vw;
+    max-width: 500px;
+    /* En PC no se deforma, se queda como tarjeta abajo al centro */
+    margin: 0 auto;
+
+    /* 3. Altura responsiva (mínima según contenido, máxima 85% de la pantalla) */
+    height: auto;
+    max-height: 85dvh;
+
+    /* 4. Estética iOS (Glassmorphism + Esquinas superiores redondeadas) */
+    background-color: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(25px) saturate(190%);
+    -webkit-backdrop-filter: blur(25px) saturate(190%);
+
+    /* Esquinas redondeadas SOLO en la parte superior */
+    border-radius: 20px 20px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.12);
+
+    /* 5. Padding adaptado a pantallas con barra de inicio (iPhone Home Bar) */
+    padding: 12px 20px calc(20px + env(safe-area-inset-bottom)) 20px;
+    display: flex;
+    flex-direction: column;
     overflow-y: auto;
-    margin-left: -1rem;
-    padding: 1rem;
-    box-shadow: 1px 1px 7px 3px rgb(141, 138, 138);
+
+    /* 6. Animación deslizable desde abajo estilo iOS */
+    animation: slideUpApple 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.container-pp{
+/* Indicador de arrastre (La Barrita/Pill clásica de iOS arriba) */
+.section-pp::before {
+    content: "";
+    display: block;
+    width: 36px;
+    height: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    margin: 0 auto 16px auto;
+}
+
+/* Animación de entrada: emerge desde fuera de la pantalla (100% traducido hacia abajo) */
+@keyframes slideUpApple {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+.container-pp {
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
-.container-cp:hover{
+.container-cp:hover {
     background-color: rgb(149, 151, 151);
 }
 
-.container-cp1{
+.container-cp1 {
     border-radius: .7rem;
     background-color: rgb(245, 248, 248);
     align-items: center;
@@ -32,24 +81,24 @@
     border: 1px solid;
     box-sizing: border-box;
     width: 8.5rem;
-    padding:.2rem;
+    padding: .2rem;
 }
 
-.container-cp1:hover{
+.container-cp1:hover {
     background-color: rgb(149, 151, 151);
 }
 
-.container-ca{
+.container-ca {
     display: flex;
     justify-content: flex-end;
 }
 
-.cancel{
+.cancel {
     width: 2rem;
     height: 2rem;
     margin-bottom: 1rem;
 }
-.cancel:hover{
+
+.cancel:hover {
     color: tomato;
 }
-
