@@ -1,34 +1,97 @@
-.sections-m{
-    padding: 1rem;
-    box-sizing: border-box;}
+/* Sección contenedora */
+.sections-m {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
 
-.datos-m{
+/* Grilla flexible */
+.datos-m {
     display: flex;
     flex-wrap: wrap;
-    font-size: 1rem;
-    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.Reserva{
+/* Botón de Reserva con ALTA PRESENCIA (Estilo Apple Premium) */
+.Reserva {
     box-sizing: border-box;
-    width: 12rem;
-    vertical-align: middle;
-    background-color: #FFD65A;
-    text-align: center;
-    padding: .2em;
-    border-radius: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 11.5rem;
+    height: 2.85rem;
+    padding: 0 1.5rem;
+
+    /* Negro azabache profundo */
+    background-color: #0f172a;
+    border-radius: 9999px;
+    /* Forma de píldora limpia */
+
+    /* Sombra elegante que da profundidad */
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.25 cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.Reserva:hover{
-    background-color: #F69D39;
+/* Interacción Hover y Clic */
+.Reserva:hover {
+    background-color: #1e293b;
+    /* Tono ligeramente más claro */
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.35);
+    transform: translateY(-2px);
 }
 
-.linkR{
-    font-size: .8rem;
-    color: black;
+.Reserva:active {
+    transform: scale(0.97) translateY(0);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.2);
+}
+
+/* Enlace interno */
+.linkR {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff !important;
+    /* Blanco puro para máximo contraste */
     text-decoration: none;
+    letter-spacing: 0.02em;
 }
 
-.linkR:hover{
-    color:blue;
+.Reserva:hover .linkR {
+    color: #ffffff !important;
+}
+
+.info-notice {
+    box-sizing: border-box;
+    max-width: 320px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: rgba(241, 245, 249, 0.6);
+    border-left: 3px solid #0f172a;
+    border-radius: 0.5rem;
+    text-align: left;
+}
+
+.info-notice p {
+    margin: 0 0 0.4rem 0;
+    font-size: 0.825rem;
+    color: #334155;
+}
+
+.info-notice .sub-notice {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: #64748b;
+    font-style: italic;
 }
