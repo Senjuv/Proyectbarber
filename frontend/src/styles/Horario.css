@@ -1,17 +1,18 @@
 .gridCalendar{
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(1fr);
     justify-content: center;
     justify-items: center;
     gap: .2rem;
-    
+    padding-bottom: 2rem;
 }
 
 .DataC{
-    font-size: 1rem;
+    font-size: clamp(1rem, 4vw, 2.5rem);
     border: 1px solid;
-    width: 10rem;
+    width: clamp(10rem, 40vw, 15rem);
     display: flex;
     justify-content: center;
 }

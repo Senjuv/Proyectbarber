@@ -1,7 +1,7 @@
 .section-pp{
     box-sizing: border-box;
     width: clamp(20rem, 100vw, 34rem);
-    height: 33rem;
+    height: 31rem;
     justify-content: center;
     background-color: rgb(243, 242, 242);
     position: fixed;
@@ -43,6 +43,7 @@
     display: flex;
     justify-content: flex-end;
 }
+
 .cancel{
     width: 2rem;
     height: 2rem;
