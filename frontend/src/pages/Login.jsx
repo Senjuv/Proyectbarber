@@ -34,17 +34,17 @@ function Login() {
     return (
         <div className="App">
             <Navbar></Navbar>
-            <section className="sections-c" id="productos">
+            <section className="section-c" id="productos">
                 <div className="formContainer">
                     <h1 className="h1-t">Iniciar sesion de ADMINISTRADOR</h1>
                     <br />
-                    <div className="Form">
+                    <div className="form-d">
                         <form action="" >
                             <h1 className="tittleform">Correo:</h1>
-                            <input type="text" placeholder="@gmail" value={c} onChange={manejarC} className="input-t" />
+                            <input type="text" placeholder="@gmail" value={c} onChange={manejarC} className="input" />
                             <h1 className="tittleform">Contraseña:</h1>
-                            <input type="text" placeholder="Ingresa la contraseña" value={p} onChange={manejarP} className="input-t" />
-                            <div className="Button-E" onClick={() => iniciarSesion(c,p)}>Enviar</div>
+                            <input type="text" placeholder="Ingresa la contraseña" value={p} onChange={manejarP} className="input" />
+                            <div className="button-e" onClick={() => iniciarSesion(c,p)}>Ingresar</div>
                         </form>
                     </div>
                 </div>

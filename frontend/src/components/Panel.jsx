@@ -39,28 +39,38 @@ function Panel() {
     }
     return (
         <div className="section-panel">
+            {/* Botón de cierre */}
             <div className="container-ca">
                 <MdOutlineCancel onClick={() => closeC()} className="cancel" />
             </div>
-            <h2>Citas pendientes</h2>
+
+            {/* Encabezado del panel */}
+            <div className="panel-header">
+                <h2>Citas Pendientes</h2>
+                <span className="badge-count">{datos.length} agendadas</span>
+            </div>
+
+            {/* Tabla de registros */}
             <div className="container-panel">
-                <div className="datos-panel">
-                    <h5>Nombre</h5>
-                    <h5>Numero</h5>
-                    <h5>Corte</h5>
-                    <h5>Hora</h5>
+                {/* Cabecera de columnas */}
+                <div className="datos-panel header-row">
+                    <span>Nombre</span>
+                    <span>Teléfono</span>
+                    <span>Servicio</span>
+                    <span>Hora</span>
                 </div>
-                {datos.map((dato) => (
-                    <div
-                        key={dato.id}
-                        className="datos-panel"
-                    >
-                        <h5>{dato.name}</h5>
-                        <h5>{dato.number}</h5>
-                        <h5>{dato.corte}</h5>
-                        <h5>{dato.hora}</h5>
-                    </div>
-                ))}
+
+                {/* Lista de citas */}
+                <div className="panel-list">
+                    {datos.map((dato) => (
+                        <div key={dato.id} className="datos-panel data-row">
+                            <span className="col-name">{dato.name}</span>
+                            <span className="col-phone">{dato.number}</span>
+                            <span className="col-service">{dato.corte}</span>
+                            <span className="col-time">{dato.hora}</span>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )
