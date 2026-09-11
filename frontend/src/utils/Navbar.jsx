@@ -12,7 +12,6 @@ function Navbar() {
                 </div>
             </header>
         </section>
-
     )
 }
 

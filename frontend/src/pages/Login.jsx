@@ -43,7 +43,7 @@ function Login() {
                             <h1 className="tittleform">Correo:</h1>
                             <input type="text" placeholder="@gmail" value={c} onChange={manejarC} className="input" />
                             <h1 className="tittleform">Contraseña:</h1>
-                            <input type="text" placeholder="Ingresa la contraseña" value={p} onChange={manejarP} className="input" />
+                            <input type="password" placeholder="Ingresa la contraseña" value={p} onChange={manejarP} className="input" />
                             <div className="button-e" onClick={() => iniciarSesion(c,p)}>Ingresar</div>
                         </form>
                     </div>

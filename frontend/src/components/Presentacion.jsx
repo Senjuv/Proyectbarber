@@ -25,7 +25,8 @@ function Presentacion({ isOpen, setIsOpen, datosCita, env, setEnv }) {
                     corte: datosCita.corte,
                     hora: datosCita.hora,
                     number: datosCita.numero,
-                    horar: datosCita.id
+                    horar: datosCita.id,
+                    disable: false
                 }
             ])
         if (error) {
